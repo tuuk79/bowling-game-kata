@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-public class bowlingTests {
+public class BowlingTests {
 
 	@Test
 	public void bowlingCompetitionShouldHaveAtLeastOnePlayer() {
