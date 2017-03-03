@@ -2,6 +2,8 @@ package tests;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.Test;
 
 import main.Player;
@@ -20,6 +22,7 @@ public class PlayerTests {
 		Player player = new Player();
 
 		assertNotNull(player.games);
+		assertTrue(player.games instanceof ArrayList);
 	}
 
 }
