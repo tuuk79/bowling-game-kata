@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
+import main.Game;
+
 public class BowlingTests {
 
 	@Test

@@ -4,6 +4,10 @@ import java.util.ArrayList;
 
 public class Player {
 
-	public Object games = new ArrayList<String>();
+	public ArrayList<Game> games = null;
+	
+	public Player() {
+		games = new ArrayList<Game>();
+	}
 
 }

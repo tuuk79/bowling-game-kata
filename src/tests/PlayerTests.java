@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
+import main.Game;
 import main.Player;
 
 public class PlayerTests {
@@ -31,7 +32,7 @@ public class PlayerTests {
 		
 		player.games.add(new Game());
 
-		assertTrue(player.games.count() > 0);
+		assertTrue(player.games.size() > 0);
 	}
 
 }
