@@ -6,7 +6,9 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
+import main.Competition;
 import main.Game;
+import main.Player;
 
 public class BowlingTests {
 
@@ -28,7 +30,7 @@ public class BowlingTests {
 		Game game = new Game();
 		player.games.add(game);
 		
-		assertTrue(player.games > 0);
+		assertTrue(player.games.size() > 0);
 	}
 	
 
