@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 
+import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -12,11 +13,22 @@ import main.Game;
 import main.Player;
 
 public class bowlingTests {
+	
+	private Game game;
+	private Player player;
+	private Competition competition;
+	@Before
+	public void setup() {
+	  game = new Game();
+	  player = new Player();
+	  competition = new Competition();
+	}
+	
 
 	@Test
 	public void bowlingCompetitionShouldHaveAtLeastOnePlayer() {
-		Competition competition = new Competition();
-		Player player = new Player();
+	 
+	
 		
 		competition.players.add(player);
 
@@ -25,10 +37,10 @@ public class bowlingTests {
 	
 	@Test
 	public void eachPlayerCanPlayGames() {
-		Player player = new Player();
+		
 		player.games = new ArrayList<Game>();
 		
-		Game game = new Game();
+		
 		player.games.add(game);
 		
 		assertTrue(player.games.size() > 0);
@@ -38,7 +50,7 @@ public class bowlingTests {
    /*	@Ignore("Test is ignored until we unit test some more.")
 	@Test
 	public void playerRollsAndGameReturnsNumberOfPinsKnockedDown() {
-		Game game = new Game();
+		
 		game.currentPlayer = game.getPlayer();
 		int pinsKnockedDown = game.currentPlayer.roll();
 		game.currentPlayer.totalPinsKnockedDown = pinsKnockedDown;
