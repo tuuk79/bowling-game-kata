@@ -24,5 +24,14 @@ public class PlayerTests {
 		assertNotNull(player.games);
 		assertTrue(player.games instanceof ArrayList);
 	}
+	
+	@Test
+	public void playerPlaysOneGameAndKeepsTrackOfIt() {
+		Player player = new Player();
+		
+		player.games.add(new Game());
+
+		assertTrue(player.games.count() > 0);
+	}
 
 }
