@@ -4,13 +4,14 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import main.Competition;
 import main.Game;
 import main.Player;
 
-public class BowlingTests {
+public class bowlingTests {
 
 	@Test
 	public void bowlingCompetitionShouldHaveAtLeastOnePlayer() {
@@ -34,7 +35,7 @@ public class BowlingTests {
 	}
 	
 
-	
+   /*	@Ignore("Test is ignored until we unit test some more.")
 	@Test
 	public void playerRollsAndGameReturnsNumberOfPinsKnockedDown() {
 		Game game = new Game();
@@ -43,6 +44,7 @@ public class BowlingTests {
 		game.currentPlayer.totalPinsKnockedDown = pinsKnockedDown;
 
 		assertEquals(game.currentPlayer.totalPinsKnockedDown, pinsKnockedDown);
-	}
-
+	} 
+	*/
+   
 }
