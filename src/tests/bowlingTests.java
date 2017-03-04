@@ -5,7 +5,6 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import main.Competition;
@@ -17,6 +16,7 @@ public class bowlingTests {
 	private Game game;
 	private Player player;
 	private Competition competition;
+	
 	@Before
 	public void setup() {
 	  game = new Game();
@@ -27,8 +27,6 @@ public class bowlingTests {
 
 	@Test
 	public void bowlingCompetitionShouldHaveAtLeastOnePlayer() {
-	 
-	
 		
 		competition.players.add(player);
 
