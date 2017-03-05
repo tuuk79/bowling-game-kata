@@ -34,20 +34,20 @@ public class GameTests {
 	@Test
 	public void scoreUnderATenInASingleFrame() {
 		
-		for (int i = 0; i< 2; i++){
-			game.roll(9);
-		}
-		
+		game.roll(9);	
 		assertEquals(9, game.score());
+	}
 		
+	@Test
+	public void scoreUnderATenInASingleFrameConsistenlyIncreasesScore() {
 		game.roll(1);
 		game.roll(2);
-		assertEquals(12, game.score());
-		
 		game.roll(3);
 		game.roll(3);
-		assertEquals(18,game.score());
+		assertEquals(18, game.score());
 	}
+	
+	
 	
 
 }
