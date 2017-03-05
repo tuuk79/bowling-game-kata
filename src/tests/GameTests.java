@@ -38,15 +38,15 @@ public class GameTests {
 			game.roll(9);
 		}
 		
-		assertTrue(game.score() == 9);
+		assertEquals(9, game.score());
 		
 		game.roll(1);
 		game.roll(2);
-		assertTrue(game.score() == 12);
+		assertEquals(12, game.score());
 		
 		game.roll(3);
 		game.roll(3);
-		assertTrue(game.score() == 18);
+		assertEquals(18,game.score());
 	}
 	
 
