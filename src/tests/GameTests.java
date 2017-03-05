@@ -20,6 +20,7 @@ public class GameTests {
 	public void shouldCreateAGame() {
 		assertNotNull(game);
 	}
+
 	@Test
 	public void gutterBall() {
 		
@@ -35,16 +36,16 @@ public class GameTests {
 	public void scoreUnderATenInASingleFrame() {
 		
 		game.roll(9);	
-		assertEquals(9, game.score());
+		assertEquals(9, game.getScore());
 	}
 		
 	@Test
-	public void scoreUnderATenInASingleFrameConsistenlyIncreasesScore() {
+	public void scoreUnderATenInASingleFrameConsistentlyIncreasesScore() {
 		game.roll(1);
 		game.roll(2);
 		game.roll(3);
 		game.roll(3);
-		assertEquals(18, game.score());
+		assertEquals(9, game.getScore());
 	}
 	
 	

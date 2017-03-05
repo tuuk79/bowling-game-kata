@@ -8,7 +8,7 @@ public class Game {
 		score += i;
 	}
 
-	public int score() {
+	public int getScore() {
 		return score;
 	};
 
