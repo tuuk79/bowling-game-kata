@@ -32,7 +32,7 @@ public class GameTests {
 	}
 	
 	@Test
-	public void scoreUnderATen() {
+	public void scoreUnderATenInASingleFrame() {
 		
 		for (int i = 0; i< 2; i++){
 			game.roll(9);
