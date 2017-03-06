@@ -6,13 +6,13 @@ import org.junit.Test;
 
 import main.Competition;
 
-public class CompetitionTests {
+public class CompetitionShould {
 
 	@Test
-	public void shouldCreateACompetition() {
+	public void BeAbleToHavePlayers() {
 		Competition competition = new Competition();
 
-		assertNotNull(competition);
+		assertNotNull(competition.players);
 	}
 
 }

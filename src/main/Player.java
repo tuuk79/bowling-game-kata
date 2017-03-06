@@ -9,5 +9,9 @@ public class Player {
 	public Player() {
 		games = new ArrayList<Game>();
 	}
+	
+	public void roll(int numberOfPinsKnockedDown) {
+		
+	}
 
 }
