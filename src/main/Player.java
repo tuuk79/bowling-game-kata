@@ -14,4 +14,16 @@ public class Player {
 		
 	}
 
+	public void startGame(Game game) {
+		games.add(game);
+		
+	}
+
+	public void updateScore(Game game, int numberOfPinsKnockedDown) {
+		game.updateScore(numberOfPinsKnockedDown);
+		games.add(game);
+		
+		
+	}
+
 }
