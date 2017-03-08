@@ -17,7 +17,7 @@ public class CompetitionShould {
 	}
 	
 	@Test
-	public void BeAbleToHavePlayers() {
+	public void HavePlayers() {
 		assertNotNull(competition.players);
 	}
 

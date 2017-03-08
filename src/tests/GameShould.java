@@ -6,7 +6,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import main.Game;
-import main.Player;
 
 public class GameShould {
 	private Game game;
@@ -16,7 +15,7 @@ public class GameShould {
 	}
 
 	@Test
-	public void CreateAGame() {	
+	public void BeCreated() {	
 		assertNotNull(game);
 	}
 	
@@ -27,7 +26,7 @@ public class GameShould {
 	}
 	
 	@Test
-	public void KeepItsScore() {
+	public void ReturnScore() {
 		int numberOfPinsKnockedDown = 4;	
 		game.updateScore(numberOfPinsKnockedDown);		
 		assertEquals(4, game.getScore());

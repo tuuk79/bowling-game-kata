@@ -27,10 +27,18 @@ public class PlayerShould {
 	}
 	
 	@Test
-	public void BeAbleToRoll() {
+	public void RollAndHitACertainNumberOfPins() {
 		int numberOfPinsKnockedDown = 1;
 		
 		player.roll(numberOfPinsKnockedDown);
+	}
+	
+	@Test
+	public void RollAndHitARandomNumberOfPins() {
+		int result1 = player.roll();
+		int result2 = player.roll();
+		
+		assertFalse(result1 == result2);
 	}
 	
 	@Test
