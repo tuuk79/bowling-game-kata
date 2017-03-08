@@ -27,7 +27,8 @@ public class Player {
 	}
 	
 	public int roll() {
-	 return	pins = (int) (Math.random() * 11);
+	 double placeHolder = Math.floor(Math.random() * 11);
+	 return	pins = (int) (placeHolder);
 		
 	}
 
