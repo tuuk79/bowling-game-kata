@@ -1,9 +1,11 @@
 package main;
 
+import java.util.List;
+
 public class Game {
 
 	private int score;
-	private int frames = 10;
+	private List<Frame> frames;
 	
 	public void updateScore(int numberOfPinsKnockedDown) {
 		score += numberOfPinsKnockedDown;
@@ -13,8 +15,13 @@ public class Game {
 		return score;
 	};
 	
-	public int getFrames() {
+	public List<Frame> getFrames() {
 		return frames;
+	}
+
+	public int getCompleteFrames() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

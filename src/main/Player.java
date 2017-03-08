@@ -1,12 +1,10 @@
 package main;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Player {
 
 	public ArrayList<Game> games = null;
-	private int pins;
 	
 	public Player() {
 		games = new ArrayList<Game>();
@@ -28,8 +26,8 @@ public class Player {
 	
 	public int roll() {
 	 double placeHolder = Math.floor(Math.random() * 11);
-	 return	pins = (int) (placeHolder);
-		
+	 return	(int) (placeHolder);
+
 	}
 
 }
