@@ -6,6 +6,7 @@ import java.util.Random;
 public class Player {
 
 	public ArrayList<Game> games = null;
+	private int pins;
 	
 	public Player() {
 		games = new ArrayList<Game>();
@@ -23,7 +24,10 @@ public class Player {
 	public void updateScore(Game game, int numberOfPinsKnockedDown) {
 		game.updateScore(numberOfPinsKnockedDown);
 		games.add(game);
-		
+	}
+	
+	public int roll() {
+	 return	pins = (int) (Math.random() * 11);
 		
 	}
 
