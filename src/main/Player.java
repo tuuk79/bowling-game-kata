@@ -10,8 +10,8 @@ public class Player {
 		games = new ArrayList<Game>();
 	}
 	
-	public void roll(int numberOfPinsKnockedDown) {
-		
+	public int roll(int numberOfPinsKnockedDown) {
+		return numberOfPinsKnockedDown;
 	}
 
 	public void startGame(Game game) {
@@ -27,7 +27,6 @@ public class Player {
 	public int roll() {
 	 double placeHolder = Math.floor(Math.random() * 11);
 	 return	(int) (placeHolder);
-
 	}
 
 }

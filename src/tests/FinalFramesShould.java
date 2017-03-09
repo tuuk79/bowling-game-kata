@@ -6,9 +6,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import main.FinalFrame;
-import main.Frame;
-import main.Game;
-import main.NonFinalFrame;
 
 public class FinalFramesShould {
 	private FinalFrame finalFrame;
@@ -16,11 +13,16 @@ public class FinalFramesShould {
 	@Before
 	public void setup() {
 		 finalFrame = new FinalFrame();
-		 
 	}
 
 	@Test
 	public void BeCreated() {
 		assertNotNull(finalFrame);
+	}
+	
+	@Test
+	public void HaveTwoAttemptsInAFinalFrame() {
+		int expected = 3;
+		assertEquals(expected, finalFrame.getAttempts());
 	}
 }
