@@ -14,6 +14,7 @@ public class NonFinalFramesShould {
 	@Before
 	public void setup() {
 		 nonFinalFrame = new NonFinalFrame();
+		 frame = Frame.getInstance();
 	}
 
 	@Test
