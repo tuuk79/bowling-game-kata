@@ -29,8 +29,10 @@ public class PlayerShould {
 	@Test
 	public void RollAndHitACertainNumberOfPins() {
 		int numberOfPinsKnockedDown = 1;
+		int expected = 1;
+		int result = player.roll(numberOfPinsKnockedDown);
 		
-		player.roll(numberOfPinsKnockedDown);
+		assertEquals(expected, result);
 	}
 	
 	@Test
