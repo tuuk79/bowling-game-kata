@@ -11,7 +11,7 @@ import main.NonFinalFrame;
 
 public class NonFinalFramesShould {
 	private Frame frame;
-	
+	private NonFinalFrame nonFinalFrame;
 	@Before
 	public void setup() {
 		 nonFinalFrame = new NonFinalFrame();
