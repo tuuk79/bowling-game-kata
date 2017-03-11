@@ -2,13 +2,16 @@ package tests;
 
 import static org.junit.Assert.*;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import org.junit.Before;
 import org.junit.Test;
 
+import main.Attempt;
+import main.FinalFrame;
 import main.Frame;
 import main.Game;
+import main.NonFinalFrame;
 
 public class GameShould {
 	private Game game;
@@ -24,21 +27,57 @@ public class GameShould {
 	}
 	
 	@Test
+	public void HaveFrames() {
+		assertTrue(game.getFrames() instanceof ArrayList);
+	}
+	
+	@Test
 	public void HaveTenFrames() {
 		int expected = 10;
-		assertEquals(expected, game.getFrames().size());
+		assertEquals(expected, game.frames.size());
 	}
 	
 	@Test
-	public void HaveFrames() {
-		assertTrue(game.getFrames() instanceof List);
-		assertTrue(game.getFrames().get(0) instanceof Frame);
+	public void HaveNineNonFinalFrames() {
+		for (int i = 0; i < 8; i++) {
+			assertTrue(game.getFrames().get(i) instanceof NonFinalFrame);			
+		}
 	}
 	
 	@Test
-	public void CompleteANonFinalFrame() {
+	public void HaveOneFinalFrame() {
+		assertTrue(game.getFrames().get(9) instanceof FinalFrame);
+	}
+	
+	@Test
+	public void CompleteAFrame() {
+		int attempt1PinsKnockedDown = 1;
+		int attempt2PinsKnockedDown = 5;
+		
+		Frame frame = game.getFrames().get(0);
+		frame.attempts.get(0).setPinsKnockedDown(attempt1PinsKnockedDown);
+		frame.attempts.get(1).setPinsKnockedDown(attempt2PinsKnockedDown);
+		frame.markAsComplete();
+		
+		assertTrue(frame.getCompletionStatus());
+	}
+	
+	@Test
+	public void HaveACompletedNonFinalFrame() {
+		int attempt1PinsKnockedDown = 1;
+		int attempt2PinsKnockedDown = 5;
+		
+		NonFinalFrame frame = (NonFinalFrame)game.getFrames().get(0);
+		Attempt attempt1 = frame.attempts.get(0);
+		attempt1.setPinsKnockedDown(attempt1PinsKnockedDown);
+		Attempt attempt2 = frame.attempts.get(1);
+		attempt2.setPinsKnockedDown(attempt2PinsKnockedDown);
+		frame.markAsComplete();
+		
 		int expected = 1;
-		assertEquals(expected, game.getCompleteFrames());
+		ArrayList<Frame> completedFrames = game.getCompletedFrames();
+		
+		assertEquals(expected, completedFrames.size());
 	}
 	
 	@Test

@@ -1,11 +1,16 @@
 package main;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public abstract class Frame {
-	List<Attempt> attempts;
-	public static Frame getInstance() {
-        
-        return new Attempt();
-    }
+	public ArrayList<Attempt> attempts;
+	private Boolean isComplete = false;
+	
+	public void markAsComplete() {
+		isComplete = true;
+	}
+
+	public boolean getCompletionStatus() {
+		return isComplete;
+	}
 }

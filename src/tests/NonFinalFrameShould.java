@@ -5,26 +5,23 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import main.Frame;
 import main.NonFinalFrame;
 
-public class NonFinalFramesShould {
-	private Frame frame;
+public class NonFinalFrameShould {
 	private NonFinalFrame nonFinalFrame;
 	@Before
 	public void setup() {
 		 nonFinalFrame = new NonFinalFrame();
-		 frame = Frame.getInstance();
 	}
 
 	@Test
-	public void BeCreated() {	
-		assertNotNull(frame);
+	public void BeCreated() {
+		assertNotNull(nonFinalFrame);
 	}
 	
 	@Test
 	public void HaveTwoAttemptsInARegularFrame() {
 		int expected = 2;
-		assertEquals(expected, nonFinalFrame.getAttempts());
+		assertEquals(expected, nonFinalFrame.getAttempts().size());
 	}
 }

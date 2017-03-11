@@ -1,10 +1,19 @@
 package main;
 
-public class FinalFrame extends Frame {
+import java.util.ArrayList;
 
-	public Object getAttempts() {
-		// TODO Auto-generated method stub
-		return 3;
+public class FinalFrame extends Frame {
+	public int maxAttempts = 3;
+	
+	public FinalFrame() {
+		attempts = new ArrayList<Attempt>();
+		for (int i = 0; i < maxAttempts; i++) {
+			attempts.add(new Attempt());
+		}
+	}
+
+	public ArrayList<Attempt> getAttempts() {
+		return attempts;
 	}
 	
 }

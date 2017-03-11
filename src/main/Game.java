@@ -1,11 +1,19 @@
 package main;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class Game {
 
 	private int score;
-	private List<Frame> frames;
+	public ArrayList<Frame> frames;
+	
+	public Game() {
+		frames = new ArrayList<Frame>();
+		for (int i = 0; i < 9; i++) {
+			frames.add(new NonFinalFrame());			
+		}
+		frames.add(new FinalFrame());
+	}
 	
 	public void updateScore(int numberOfPinsKnockedDown) {
 		score += numberOfPinsKnockedDown;
@@ -15,13 +23,20 @@ public class Game {
 		return score;
 	};
 	
-	public List<Frame> getFrames() {
+	public ArrayList<Frame> getFrames() {
 		return frames;
 	}
 
-	public int getCompleteFrames() {
-		// TODO Auto-generated method stub
-		return 0;
+	public ArrayList<Frame> getCompletedFrames() {
+		ArrayList<Frame> completedFrames = new ArrayList<Frame>();
+		
+		for (Frame frame: getFrames()) {
+			if (frame.getCompletionStatus()) {
+				completedFrames.add(frame);
+			}
+		}
+
+		return completedFrames;
 	}
 
 }

@@ -7,12 +7,12 @@ import org.junit.Test;
 
 import main.FinalFrame;
 
-public class FinalFramesShould {
+public class FinalFrameShould {
 	private FinalFrame finalFrame;
 
 	@Before
 	public void setup() {
-		 finalFrame = new FinalFrame();
+		finalFrame = new FinalFrame();
 	}
 
 	@Test
@@ -21,8 +21,8 @@ public class FinalFramesShould {
 	}
 	
 	@Test
-	public void HaveTwoAttemptsInAFinalFrame() {
+	public void HaveThreeAttemptsInAFinalFrame() {
 		int expected = 3;
-		assertEquals(expected, finalFrame.getAttempts());
+		assertEquals(expected, finalFrame.getAttempts().size());
 	}
 }
