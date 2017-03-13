@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class Frame {
 	private ArrayList<Attempt> attempts = new ArrayList<Attempt>();
-	private int maxAttempts = 3;
+	private int maxAttempts;
 	private Boolean isComplete = false;
 	
-    public Frame(int maxAttempts) {
-		
-		for (int i = 0; i < maxAttempts; i++) {
+    public Frame(int attemptsNum) {
+		this.maxAttempts = attemptsNum;
+		for (int i = 0; i < this.maxAttempts; i++) {
 			attempts.add(new Attempt());
 		}
 	}
