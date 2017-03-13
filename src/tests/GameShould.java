@@ -8,10 +8,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import main.Attempt;
-import main.FinalFrame;
 import main.Frame;
 import main.Game;
-import main.NonFinalFrame;
+
 
 public class GameShould {
 	private Game game;
@@ -38,18 +37,6 @@ public class GameShould {
 	}
 	
 	@Test
-	public void HaveNineNonFinalFrames() {
-		for (int i = 0; i < 8; i++) {
-			assertTrue(game.getFrames().get(i) instanceof NonFinalFrame);			
-		}
-	}
-	
-	@Test
-	public void HaveOneFinalFrame() {
-		assertTrue(game.getFrames().get(9) instanceof FinalFrame);
-	}
-	
-	@Test
 	public void CompleteAFrame() {
 		int attempt1PinsKnockedDown = 1;
 		int attempt2PinsKnockedDown = 5;
@@ -67,7 +54,7 @@ public class GameShould {
 		int attempt1PinsKnockedDown = 1;
 		int attempt2PinsKnockedDown = 5;
 		
-		NonFinalFrame frame = (NonFinalFrame)game.getFrames().get(0);
+		Frame frame = (Frame)game.getFrames().get(0);
 		Attempt attempt1 = frame.attempts.get(0);
 		attempt1.setPinsKnockedDown(attempt1PinsKnockedDown);
 		Attempt attempt2 = frame.attempts.get(1);

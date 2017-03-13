@@ -1,5 +1,6 @@
 package tests;
 
+
 import static org.junit.Assert.*;
 
 import java.awt.Frame;
@@ -12,7 +13,7 @@ public class FrameShould {
 
 	@Before
 	public void setup() {
-		frame = new Frame();
+		frame = new Frame(3);
 	}
 
 	@Test
@@ -21,7 +22,7 @@ public class FrameShould {
 	}
 	
 	@Test
-	public void HaveThreeAttemptsInAFrame() {
+	public void HaveThreeAttemptsInFinalFrame() {
 		int expected = 3;
 		assertEquals(expected, frame.getAttempts().size());
 	}
