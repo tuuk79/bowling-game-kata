@@ -7,7 +7,9 @@ public class Frame {
 	private int maxAttempts;
 	private Boolean isComplete = false;
 	
-	
+	public Frame( ){
+		
+	}
 	public Frame(int attemptNum) {
 		this.maxAttempts = attemptNum;
 		for (int i = 0; i < this.maxAttempts; i++) {

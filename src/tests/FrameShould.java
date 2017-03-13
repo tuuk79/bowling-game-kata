@@ -23,6 +23,7 @@ public class FrameShould {
 	
 	@Test
 	public void HaveThreeAttemptsInFinalFrame() {
+		
 		int expected = 3;
 		assertEquals(expected, frame.getAttempts().size());
 	}
