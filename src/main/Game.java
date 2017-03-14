@@ -38,5 +38,14 @@ public class Game {
 		}
 		return completedFrames;
 	}
+	
+	public ArrayList<Frame> tenFrameAddition(int numberOfPinsKnockedDown) {
+		if (numberOfPinsKnockedDown == 10) {
+			possible3Attempts = 1;
+		}
+		
+		frames.add(new Frame(possible3Attempts));
+		return frames;
+	}
 
 }
