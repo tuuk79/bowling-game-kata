@@ -73,16 +73,6 @@ public class GameShould {
 		game.updateScore(numberOfPinsKnockedDown);		
 		assertEquals(4, game.getScore());
 	}
-	
-	@Test
-	public void LastFrameHasAnAddictionAttemptIfScoreIs10() {
-		int numberOfPinsKnockedDown = 10;	
-		ArrayList<Frame> frame = game.tenFrameAddition(numberOfPinsKnockedDown);	
-
-		assertEquals(1, frame.get(10).getAttemptNumber());
-	}
-	
-	
-	
+		
 
 }

@@ -6,14 +6,15 @@ public class Game {
 
 	private int score;
 	public ArrayList<Frame> frames;
-	private int possible3Attempts;
+	private int twoAttempts = new AttemptAmounts().twoAttempts();
+	private int threeAttempts = new AttemptAmounts().threeAttempts();
 	
 	public Game() {
 		frames = new ArrayList<Frame>();
 		for (int i = 0; i < 9; i++) {
-			frames.add(new Frame(2));			
+			frames.add(new Frame(twoAttempts));			
 		}
-		frames.add(new Frame(possible3Attempts));
+		frames.add(new Frame(threeAttempts));
 	}
 	
 	public void updateScore(int numberOfPinsKnockedDown) {
@@ -37,15 +38,6 @@ public class Game {
 			}
 		}
 		return completedFrames;
-	}
-	
-	public ArrayList<Frame> tenFrameAddition(int numberOfPinsKnockedDown) {
-		if (numberOfPinsKnockedDown == 10) {
-			possible3Attempts = 1;
-		}
-		
-		frames.add(new Frame(possible3Attempts));
-		return frames;
 	}
 
 }

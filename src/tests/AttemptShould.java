@@ -27,5 +27,6 @@ public class AttemptShould {
 		attempt.setPinsKnockedDown(pinsKnockedDown);
 		
 		assertEquals(expected, attempt.getPinsKnockedDown());
+		
 	}
 }
