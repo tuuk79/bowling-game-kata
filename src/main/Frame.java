@@ -25,10 +25,5 @@ public class Frame {
 	public ArrayList<Attempt> getAttempts() {
 		return attempts;
 	}
-	public int getAttemptNumber() {
-		return maxAttempts;
-	}
-
-
 
 }
