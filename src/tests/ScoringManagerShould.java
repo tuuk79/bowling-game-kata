@@ -12,14 +12,15 @@ import main.ScoringManager;
 
 public class ScoringManagerShould {
 	private ScoringManager manager;
+	private Game game;
 	
 	@Before
 	public void setup() {
-		Game mockGame = new Game();
+		game = new Game();
 		
-		Frame mockFirstFrame = mockGame.getFrames().get(0);
-		mockFirstFrame.attempts.get(0).setPinsKnockedDown(1);
-		mockFirstFrame.attempts.get(1).setPinsKnockedDown(3);
+		Frame firstFrame = game.getFrames().get(0);
+		firstFrame.attempts.get(0).setPinsKnockedDown(1);
+		firstFrame.attempts.get(1).setPinsKnockedDown(3);
 		
 		manager = new ScoringManager();
 	}
@@ -28,6 +29,8 @@ public class ScoringManagerShould {
 	public void BeCreated() {
 		assertNotNull(manager);
 	}
+	
+	
 	
 	@Test
 	public void ScoreAGame() {
