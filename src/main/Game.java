@@ -22,6 +22,10 @@ public class Game {
 	public ArrayList<Frame> getFrames() {
 		return frames;
 	}
+	
+	public void setFrame(int frameIndex) {
+		
+	}
 
 	public ArrayList<Frame> getCompletedFrames() {
 		ArrayList<Frame> completedFrames = new ArrayList<Frame>();

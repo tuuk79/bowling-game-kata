@@ -31,26 +31,31 @@ public class ScoringManagerShould {
 	
 	@Test
 	public void ScoreAGame() {
-		int attempt1PinsKnockedDown = 1;
-		int attempt2PinsKnockedDown = 5;
+		playNonFinalFrame(game, 1, 1, 2);
+		playNonFinalFrame(game, 2, 3, 4);
 		
-		NonFinalFrame frame = (NonFinalFrame) game.getFrames().get(0);
+		int expectedScore = 10;
+	    int score = manager.score(game);
+		
+		assertEquals(expectedScore, score);
+	}
+	
+	private Frame playNonFinalFrame(Game game, int frameIndex, int firstAttempt, int secondAttempt) {
+		NonFinalFrame frame = (NonFinalFrame) game.getFrames().get(frameIndex - 1);
 		
 		ArrayList<Attempt> attempts = frame.getAttempts();
 		
 		Attempt attempt1 = attempts.get(0);
 		Attempt attempt2 = attempts.get(1);
 		
-		attempt1.setPinsKnockedDown(attempt1PinsKnockedDown);
-		attempt2.setPinsKnockedDown(attempt2PinsKnockedDown);
+		attempt1.setPinsKnockedDown(firstAttempt);
+		attempt2.setPinsKnockedDown(secondAttempt);
 
 		frame.markAsComplete();
 		
-		int expectedScore = 6;
-	    int score = manager.score(game);
-		
-		assertEquals(expectedScore, score);
+		return frame;
 	}
+
 }
 	
 	
