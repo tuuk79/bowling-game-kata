@@ -4,33 +4,38 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 
+import main.Attempt;
+import main.Game;
+import main.NonFinalFrame;
+
 import org.junit.Before;
 import org.junit.Test;
 
 
-import main.NonFinalFrame;
-import main.Attempt;
-import main.Frame;
-import main.Game;
-import main.ScoringManager;
-
-public class ScoringManagerShould {
-	private ScoringManager manager;
+public class NonFinalFrameShould {
+	private NonFinalFrame nonFinalFrame;
 	private Game game;
-	
+
 	@Before
 	public void setup() {
 		game = new Game();
-		manager = new ScoringManager();
+		nonFinalFrame = new NonFinalFrame();
 	}
 
 	@Test
 	public void BeCreated() {
-		assertNotNull(manager);
+		assertNotNull(nonFinalFrame);
 	}
 	
 	@Test
-	public void ScoreAGame() {
+	public void HaveInitializedAttemptsInANonFinalFrame() {
+		int expected = 2;
+		ArrayList<Attempt> attempts = nonFinalFrame.getAttempts();
+		assertEquals(expected, attempts.size());
+	}
+	
+	@Test
+	public void CompleteNonFinalFrame() {
 		int attempt1PinsKnockedDown = 1;
 		int attempt2PinsKnockedDown = 5;
 		
@@ -46,12 +51,6 @@ public class ScoringManagerShould {
 
 		frame.markAsComplete();
 		
-		int expectedScore = 6;
-	    int score = manager.score(game);
-		
-		assertEquals(expectedScore, score);
+		assertTrue(frame.getCompletionStatus());
 	}
 }
-	
-	
-
