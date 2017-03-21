@@ -31,8 +31,8 @@ public class ScoringManagerShould {
 	
 	@Test
 	public void ScoreAGame() {
-		playNonFinalFrame(game, 1, 1, 2);
-		playNonFinalFrame(game, 2, 3, 4);
+		playNonFinalFrame(1, 1, 2);
+		playNonFinalFrame(2, 3, 4);
 		
 		int expectedScore = 10;
 	    int score = manager.score(game);
@@ -40,7 +40,29 @@ public class ScoringManagerShould {
 		assertEquals(expectedScore, score);
 	}
 	
-	private Frame playNonFinalFrame(Game game, int frameIndex, int firstAttempt, int secondAttempt) {
+	@Test
+	public void ScoreAGameWithASpare() {
+		playNonFinalFrame(1, 3, 7);
+		playNonFinalFrame(2, 3, 4);
+		
+		int expectedScore = 20;
+	    int score = manager.score(game);
+		
+		assertEquals(expectedScore, score);
+	}
+	
+	@Test
+	public void ScoreAGameWithAStrike() {
+		playNonFinalFrame(1, 10, 0);
+		playNonFinalFrame(2, 3, 4);
+		
+		int expectedScore = 24;
+	    int score = manager.score(game);
+		
+		assertEquals(expectedScore, score);
+	}
+	
+	private Frame playNonFinalFrame(int frameIndex, int firstAttempt, int secondAttempt) {
 		NonFinalFrame frame = (NonFinalFrame) game.getFrames().get(frameIndex - 1);
 		
 		ArrayList<Attempt> attempts = frame.getAttempts();

@@ -51,6 +51,6 @@ public class NonFinalFrameShould {
 
 		frame.markAsComplete();
 		
-		assertTrue(frame.getCompletionStatus());
+		assertTrue(frame.isComplete);
 	}
 }

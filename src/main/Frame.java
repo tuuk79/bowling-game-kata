@@ -4,14 +4,21 @@ import java.util.ArrayList;
 
 public abstract class Frame {
 	protected ArrayList<Attempt> attempts;
-	private Boolean isComplete = false;
+	public Boolean isComplete = false;
+	public Boolean isStrike = false;
+	public Boolean isSpare = false;
+	private int score = 0;
 
 	public void markAsComplete() {
 		isComplete = true;
 	}
-
-	public boolean getCompletionStatus() {
-		return isComplete;
+	
+	public int getScore() {
+		return score;
+	}
+	
+	public void setScore(int newScore) {
+		this.score = newScore;
 	}
 
 	public ArrayList<Attempt> getAttempts() {
