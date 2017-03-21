@@ -1,4 +1,3 @@
-# javaBowlingFrame
 ##Uncle Bob’s Bowling Game Kata
 Sharpening some Java skills.
 
