@@ -31,7 +31,7 @@ public class Game {
 		ArrayList<Frame> completedFrames = new ArrayList<Frame>();
 		
 		for (Frame frame: getFrames()) {
-			if (frame.getCompletionStatus()) {
+			if (frame.isComplete) {
 				completedFrames.add(frame);
 			}
 		}
