@@ -53,4 +53,24 @@ public class NonFinalFrameShould {
 		
 		assertTrue(frame.isComplete);
 	}
+	
+	@Test
+	public void GetFirstAttempt() throws Exception {
+		int frameIndex = 0;
+		int attemptIndex = 0;
+		NonFinalFrame frame = (NonFinalFrame) game.getFrames().get(frameIndex);
+		Attempt attempt = frame.getAttempt(attemptIndex);
+		
+		assertNotNull(attempt);
+	}
+	
+	@Test(expected=Exception.class)
+	public void ThrowExceptionWhenGettingThirdAttempt() throws Exception {
+		int frameIndex = 0;
+		int attemptIndex = 2;
+		NonFinalFrame frame = (NonFinalFrame) game.getFrames().get(frameIndex);
+		Attempt attempt = frame.getAttempt(attemptIndex);
+		
+		assertNotNull(attempt);
+	}
 }
